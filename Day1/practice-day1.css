@@ -1,0 +1,135 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.signup-form {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* width: 700px; */
+}
+
+.signup-form h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.first-name, .last-name, .password, .confirm-password{
+    width: calc(50% - 10px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    height: 50px;
+    font-size: 20px; 
+
+
+}
+
+.mobile, .email{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    height: 50px;
+    font-size: 20px;
+
+
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="password"]:focus {
+    border-color: #337ab7; 
+    box-shadow: 0 0 5px rgba(51, 122, 183, 0.5); 
+    outline: none;
+}
+
+.form-group input[type="text"]::placeholder,
+.form-group input[type="email"]::placeholder,
+.form-group input[type="password"]::placeholder {
+    font-size: 20px;
+    color: #999;
+}
+
+.signup-form button {
+    width: 48%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.signup-form .register {
+    background-color: #5cb85c;
+    color: white;
+}
+
+.signup-form .signin {
+    background-color: #337ab7;
+    color: white;
+}
+
+.signup-form .register:hover {
+    background-color: #4cae4c;
+}
+
+.signup-form .signin:hover {
+    background-color: #286090;
+}
+
+.signup-form p {
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.signup-form a {
+    color: #337ab7;
+    text-decoration: none;
+}
+.signup-form a:hover {
+    text-decoration: underline;
+}
+
+.tnc{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.tnc > p {
+    margin: 0px;
+    margin-left: 150px;
+    padding: 0px;
+    border: 0px;
+    font-size: larger;
+} 
+
+.reg {
+    background-color: #337ab7;
+    color: white;
+    padding: 3px;
+    border-radius: 5px;
+}

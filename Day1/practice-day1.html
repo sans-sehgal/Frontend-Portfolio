@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Form</title>
+    <link rel="stylesheet" href="practice-day1.css">
+</head>
+<body>
+    <div class="container">
+        <form class="signup-form">
+            <h1>Sign Up</h1>
+            <div class="form-group">
+                <input type="text" class="first-name" name="first-name" placeholder="First Name" required>
+                <input type="text" class="last-name" name="last-name" placeholder="Last Name" required>
+            </div>
+            <div class="form-group">
+                <input type="text" class="mobile" name="mobile" placeholder="Mobile No." required>
+            </div>
+            <div class="form-group">
+                <input type="email" class="email" name="email" placeholder="Email Address" required>
+            </div>
+            <div class="form-group">
+                <input type="password" class="password" name="password" placeholder="Password" required>
+                <input type="password" class="confirm-password" name="confirm-password" placeholder="Confirm Password" required>
+            </div>
+            <div class = "tnc">
+              <div>
+                  <input type="checkbox" id="agree" name="agree" required>
+                  <label for="agree"><strong>I Agree</strong></label>
+              </div>
+              <p>By clicking <span class="reg">Register</span>, you agree to the <a href="#">Terms and Conditions</a> <br> set out by this site, including our Cookie Use.</p>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn register">Register</button>
+                <button type="button" class="btn signin">Sign In</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
