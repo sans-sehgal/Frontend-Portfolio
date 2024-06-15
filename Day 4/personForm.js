@@ -41,7 +41,6 @@ personForm.addEventListener("submit", (e) => {
 
     people.push(newPerson);
 
-    
     localStorage.setItem("people", JSON.stringify(people));
 
     displayPerson(newPerson);
