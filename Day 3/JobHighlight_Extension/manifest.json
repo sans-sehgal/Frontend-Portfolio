@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "Job Info Helper",
+    "version": "1.0",
+    "description": "Highlights important info in LinkedIn job descriptions for international students.",
+    "permissions": [
+      "activeTab",
+      "storage",
+      "scripting"
+    ],
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://*.linkedin.com/jobs/*"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  

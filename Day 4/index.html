@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 4 JS</title>
+  </head>
+  <body>
+    <form id="personForm">
+      <label class="person-form__name">
+        Name
+        <input id="personName" placeholder="enter your name" required/>
+      </label>
+      <label class="person-form__age">
+        Age
+        <input type="number" id="personAge" required/>
+      </label>
+      <button type="submit" id="addPersonBtn">
+        Add Person To local storage
+      </button>
+    </form>
+    <div id = 'addPeople'>
+
+    </div>
+
+    <h2>Destructure</h2>
+    <a
+      href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment"
+      >more info</a
+    >
+
+
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    <script src="./util/uuid.js"></script>
+    <script src="./personForm.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
