@@ -56,7 +56,7 @@ export const handleAddEvent = async (event) => {
   
     } catch (error) {
       console.error("Error:", error);
-      throw error; // Re-throw the error to propagate it if needed
+      throw error; 
     }
   };
   

@@ -1,3 +1,5 @@
+import { handleAddEvent, handleDeleteEvent } from "../../apis/eventApis";
+
 const SET_EVENTS = 'SET_EVENTS';
 const SHOW_FORM = 'SHOW_FORM';
 const HIDE_FORM = 'HIDE_FORM';
@@ -11,6 +13,8 @@ const initialState = {
     events: [],
     showForm: false,
 };
+
+// Actions
 
 export const setEvents = (events) => ({
   type: SET_EVENTS,
@@ -49,6 +53,37 @@ export const cancelEdit = (eventId) => ({
   type: CANCEL_EDIT,
   payload: eventId,
 });
+
+export const addUserAsync = (event) => {
+  return async (dispatch) => {
+    try {
+      const response = await handleAddEvent(event)
+      if (!event.editing) {
+        dispatch(addEvent(response));
+      } else {
+        dispatch(updateEvent(response));
+      }
+    }catch (error) {
+      console.error("Error deleting event:", error);
+    }
+  }
+  
+};
+
+export const handelDeleteAsync = (id) => {
+  return async (dispatch) => {
+    try {
+      const response = await handleDeleteEvent(id);
+      if (response.id) {
+        dispatch(deleteEvent(id));
+      }
+    } catch (error) {
+      console.error("Error deleting event:", error);
+    }
+  };
+};
+
+// Reducer
 
 const eventReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -102,8 +137,10 @@ const eventReducer = (state = initialState, action) => {
       default:
         return state;
     }
-  };
+};
+
+
   
-  export default eventReducer;
+export default eventReducer;
 
   

@@ -1,21 +1,21 @@
 {
   "events": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Music Festival",
       "start": "2023-01-20",
       "end": "2023-01-21",
       "editing": false
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Food Festival",
       "start": "2023-02-01",
       "end": "2023-02-02",
       "editing": false
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Holiday Party",
       "start": "2023-01-20",
       "end": "2023-01-21",

@@ -1,7 +1,6 @@
 import React, { useState, useContext } from "react";
 import { useDispatch } from 'react-redux';
-import { handleAddEvent } from "../apis/eventApis";
-import { updateEvent, addEvent, cancelEdit, hideForm } from "../redux/reducers/eventReducer";
+import { cancelEdit, hideForm, addUserAsync } from "../redux/reducers/eventReducer";
 
 // import { EventContext } from "../Context/EventContext";
 
@@ -10,9 +9,6 @@ const EventForm = ({
 }) => {
   // const { events, cancelEvent, addEvent } = useContext(EventContext);
   const dispatch = useDispatch();
-
-
-
 
   let initialName = "";
   let initialStart = "";
@@ -35,25 +31,10 @@ const EventForm = ({
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await handleAddEvent({ name, start, end, id: eventId, editing })
-    console.log(response)
-    if (!editing) {
-      dispatch(addEvent(response));
-    } else {
-      dispatch(updateEvent(response));
-    }
-  
+    dispatch(addUserAsync({name, start, end, id: eventId, editing}));
     setName("");
     setStart("");
     setEnd("");
-  };
-
-  const handleCancelEvent = (eventId) => {
-    if (eventId === null) {
-      dispatch(hideForm());
-    } else {
-      dispatch(cancelEdit(eventId));
-    }
   };
 
   return (
@@ -90,7 +71,7 @@ const EventForm = ({
             <button
               onClick={() =>
                 // cancelEvent({ name, start, end, id: eventId, editing })
-                handleCancelEvent(eventId)
+                dispatch(cancelEdit(eventId))
 
               }
             >
@@ -104,7 +85,8 @@ const EventForm = ({
           <button
             onClick={() =>
               // cancelEvent({ name, start, end, id: eventId, editing })
-              handleCancelEvent(eventId)
+              dispatch(hideForm())
+
             }
           >
             Cancel

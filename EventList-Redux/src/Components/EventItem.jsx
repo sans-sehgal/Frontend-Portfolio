@@ -1,7 +1,6 @@
 import React from "react";
-import { deleteEvent, editEvent } from "../redux/reducers/eventReducer";
+import { handelDeleteAsync, editEvent } from "../redux/reducers/eventReducer";
 import { useDispatch } from 'react-redux';
-import { handleDeleteEvent } from "../apis/eventApis";
 
 
 const EventItem = ({ event }) => {
@@ -9,28 +8,15 @@ const EventItem = ({ event }) => {
 
   const { name, start, end } = event;
 
-  const handelDelete = async (id) => {
-    const response = await handleDeleteEvent(id)
-    if(response.id){
-      dispatch(deleteEvent(id))
-    }
-
-  };
-
-
-
-  const handleEditEvent = (eventId) => {
-    dispatch(editEvent(eventId));
-  };
-
+  
   return (
     <tr>
       <td>{name}</td>
       <td>{start}</td>
       <td>{end}</td>
       <td>
-        <button onClick={() => handleEditEvent(event.id)}>Edit</button>
-        <button onClick={() => handelDelete(event.id)}>Delete</button>
+        <button onClick={() => dispatch(editEvent(event.id))}>Edit</button>
+        <button onClick={() => dispatch(handelDeleteAsync(event.id))}>Delete</button>
       </td>
     </tr>
   );
